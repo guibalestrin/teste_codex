@@ -256,11 +256,67 @@ button {
 .cta-block {
   width: 100%;
   background: #000;
-  padding: 24px 16px 32px;
+  padding: 24px 16px 124px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+
+.social-proof-popup {
+  position: fixed;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 420px;
+  padding: 12px 14px;
+  border: 1px solid rgba(196, 154, 42, 0.34);
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, rgba(34, 26, 10, 0.96) 0%, rgba(7, 7, 7, 0.98) 100%);
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 227, 170, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.social-proof-dot {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: #4ade80;
+  box-shadow:
+    0 0 0 5px rgba(74, 222, 128, 0.12),
+    0 0 16px rgba(74, 222, 128, 0.6);
+  animation: social-proof-pulse 1.8s ease-in-out infinite;
+}
+
+.social-proof-copy {
+  min-width: 0;
+}
+
+.social-proof-label {
+  margin-bottom: 4px;
+  font-size: 9px;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(212, 165, 71, 0.92);
+}
+
+.social-proof-message {
+  font-size: 13px;
+  line-height: 1.4;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  color: #f9edd1;
+  animation: social-proof-fade 0.35s ease;
 }
 
 .cta-alert {
@@ -514,7 +570,34 @@ button {
   }
 }
 
+@keyframes social-proof-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.82;
+  }
+}
+
+@keyframes social-proof-fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (min-width: 640px) {
+  .cta-block {
+    padding-bottom: 120px;
+  }
+
   .jump-cta-section {
     padding: 12px 16px 16px;
     gap: 10px;
@@ -583,6 +666,17 @@ button {
     box-shadow:
       0 0 0 1px rgba(255, 215, 130, 0.4),
       0 0 42px rgba(241, 184, 72, 0.48);
+  }
+
+  .social-proof-popup {
+    left: 20px;
+    right: auto;
+    bottom: 20px;
+    padding: 14px 16px;
+  }
+
+  .social-proof-message {
+    font-size: 14px;
   }
 
   .btn-text {
