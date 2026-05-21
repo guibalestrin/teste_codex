@@ -96,7 +96,7 @@ function SocialProofPopup() {
   const messages = [
     '23 pessoas adquiriram este metodo nas ultimas horas',
     '10 pessoas comprando AGORA',
-    `${buyerName} comprou o Codigo Anti-Rejeicao agora!`,
+    `${buyerName} comprou o Código Anti-Rejeção agora!`,
   ];
 
   return (
@@ -248,14 +248,14 @@ function LandingPage() {
             <a
               className="cta-btn"
               href="https://pay.kiwify.com.br/kTyieX6"
-              aria-label="Acessar o Codigo Anti-Rejeicao agora"
+              aria-label="Acessar o Código Anti-Rejeição agora"
               target="_blank"
               rel="noreferrer"
             >
               <div className="offer-cta-sheen" />
               <span className="btn-lock">LOCK</span>
               <div className="btn-content">
-                <p className="btn-text">QUERO ACESSAR O CODIGO ANTI-REJEICAO AGORA</p>
+                <p className="btn-text">QUERO ACESSAR O CÓDIGO ANTI-REJEIÇÃO AGORA</p>
                 <p className="btn-sub">ACESSO IMEDIATO | 100% ONLINE | GARANTIA DE 7 DIAS</p>
               </div>
             </a>
