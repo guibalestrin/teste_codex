@@ -64,8 +64,37 @@ const maleNames = [
 function SocialProofPopup() {
   const [buyerName, setBuyerName] = useState(() => maleNames[Math.floor(Math.random() * maleNames.length)]);
   const [messageIndex, setMessageIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const storytellingSection = document.getElementById('storytelling');
+
+    if (!storytellingSection) {
+      return undefined;
+    }
+
+    const updateVisibility = () => {
+      const sectionTop = storytellingSection.getBoundingClientRect().top;
+      const headerOffset = 80;
+
+      setIsVisible(sectionTop <= headerOffset);
+    };
+
+    updateVisibility();
+    window.addEventListener('scroll', updateVisibility, { passive: true });
+    window.addEventListener('resize', updateVisibility);
+
+    return () => {
+      window.removeEventListener('scroll', updateVisibility);
+      window.removeEventListener('resize', updateVisibility);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) {
+      return undefined;
+    }
+
     const intervalId = window.setInterval(() => {
       setMessageIndex((currentIndex) => {
         let nextIndex = currentIndex;
@@ -91,7 +120,7 @@ function SocialProofPopup() {
     }, 10000);
 
     return () => window.clearInterval(intervalId);
-  }, []);
+  }, [isVisible]);
 
   const messages = [
     '23 pessoas adquiriram este método nas últimas horas.',
@@ -100,7 +129,11 @@ function SocialProofPopup() {
   ];
 
   return (
-    <aside className="social-proof-popup" aria-live="polite" aria-atomic="true">
+    <aside
+      className={`social-proof-popup${isVisible ? ' is-visible' : ''}`}
+      aria-live="polite"
+      aria-atomic="true"
+    >
       <span className="social-proof-dot" aria-hidden="true" />
       <p key={messages[messageIndex]} className="social-proof-message">
         {messages[messageIndex]}
@@ -253,7 +286,6 @@ function LandingPage() {
               rel="noreferrer"
             >
               <div className="offer-cta-sheen" />
-              <span className="btn-lock"></span>
               <div className="btn-content">
                 <p className="btn-text">QUERO ACESSAR O CÓDIGO ANTI-REJEIÇÃO AGORA</p>
                 <p className="btn-sub">ACESSO IMEDIATO | 100% ONLINE | GARANTIA DE 7 DIAS</p>
