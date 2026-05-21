@@ -2,46 +2,46 @@ import { Fragment, useEffect, useState } from 'react';
 import './index.css';
 
 const sections = [
-  { id: 1, src: '/1_hero.png', alt: 'Secao principal da landing page' },
-  { id: 2, src: '/2_bigpromise.png', alt: 'Secao com a grande promessa' },
-  { id: 3, src: '/3_quebra.png', alt: 'Secao de quebra de padrao' },
-  { id: 4, src: '/4_causaoculta.png', alt: 'Secao sobre a causa oculta' },
-  { id: 5, src: '/5_inimigo.png', alt: 'Secao sobre o inimigo invisivel' },
-  { id: 6, src: '/6_doremocional.png', alt: 'Secao sobre dor emocional' },
-  { id: 7, src: '/7_storytelling.png', alt: 'Secao de storytelling' },
-  { id: 8, src: '/8_mecanismo.png', alt: 'Secao do mecanismo' },
-  { id: 9, src: '/9_como.png', alt: 'Secao explicando como funciona' },
-  { id: 10, src: '/10_provas.png', alt: 'Secao com provas' },
-  { id: 11, src: '/10_1_provas.png', alt: 'Secao complementar com provas' },
-  { id: 12, src: '/11_offerstack.png', alt: 'Secao da oferta principal' },
+  { id: 1, src: '/1_hero.png', alt: 'Seção principal da landing page' },
+  { id: 2, src: '/2_bigpromise.png', alt: 'Seção com a grande promessa' },
+  { id: 3, src: '/3_quebra.png', alt: 'Seção de quebra de padrão' },
+  { id: 4, src: '/4_causaoculta.png', alt: 'Seção sobre a causa oculta' },
+  { id: 5, src: '/5_inimigo.png', alt: 'Seção sobre o inimigo invisível' },
+  { id: 6, src: '/6_doremocional.png', alt: 'Seção sobre dor emocional' },
+  { id: 7, src: '/7_storytelling.png', alt: 'Seção de storytelling' },
+  { id: 8, src: '/8_mecanismo.png', alt: 'Seção do mecanismo' },
+  { id: 9, src: '/9_como.png', alt: 'Seção explicando como funciona' },
+  { id: 10, src: '/10_provas.png', alt: 'Seção com provas' },
+  { id: 11, src: '/10_1_provas.png', alt: 'Seção complementar com provas' },
+  { id: 12, src: '/11_offerstack.png', alt: 'Seção da oferta principal' },
 ];
 
 const routeContent = {
   '/privacidade': {
-    title: 'Politica de Privacidade',
+    title: 'Política de Privacidade',
     paragraphs: [
-      'A Caverna de Alexandria coleta apenas as informacoes necessarias para processar pagamentos, liberar o acesso ao produto e prestar suporte ao cliente.',
-      'Os dados informados nao sao vendidos a terceiros. Eles podem ser compartilhados apenas com plataformas operacionais essenciais, como meios de pagamento, hospedagem e ferramentas de atendimento.',
-      'Ao continuar navegando nesta pagina ou adquirir o produto, voce concorda com o uso dessas informacoes para comunicacao, entrega de conteudo e melhoria da experiencia.',
-      'Se desejar solicitar atualizacao, correcao ou exclusao de dados, entre em contato pelos canais oficiais de suporte.',
+      'A Caverna de Alexandria coleta apenas as informações necessárias para processar pagamentos, liberar o acesso ao produto e prestar suporte ao cliente.',
+      'Os dados informados não são vendidos a terceiros. Eles podem ser compartilhados apenas com plataformas operacionais essenciais, como meios de pagamento, hospedagem e ferramentas de atendimento.',
+      'Ao continuar navegando nesta página ou adquirir o produto, você concorda com o uso dessas informações para comunicação, entrega de conteúdo e melhoria da experiência.',
+      'Se desejar solicitar atualização, correção ou exclusão de dados, entre em contato pelos canais oficiais de suporte.',
     ],
   },
   '/termos': {
-    title: 'Termos de Servico',
+    title: 'Termos de Serviço',
     paragraphs: [
-      'O conteudo da Caverna de Alexandria e destinado exclusivamente a fins informativos e educacionais, sendo proibida a reproducao, distribuicao ou revenda sem autorizacao expressa.',
-      'O acesso ao material e individual. O compartilhamento indevido de login, arquivos ou areas protegidas pode resultar em bloqueio do acesso sem reembolso.',
-      'Os resultados variam de pessoa para pessoa e dependem da aplicacao pratica do conteudo. Nenhuma promessa deve ser interpretada como garantia absoluta de resultado.',
-      'Ao adquirir e utilizar o produto, voce declara estar de acordo com estes termos e com a politica de privacidade vigente.',
+      'O conteúdo da Caverna de Alexandria é destinado exclusivamente a fins informativos e educacionais, sendo proibidas a reprodução, a distribuição ou a revenda sem autorização expressa.',
+      'O acesso ao material é individual. O compartilhamento indevido de login, arquivos ou áreas protegidas pode resultar em bloqueio do acesso sem reembolso.',
+      'Os resultados variam de pessoa para pessoa e dependem da aplicação prática do conteúdo. Nenhuma promessa deve ser interpretada como garantia absoluta de resultado.',
+      'Ao adquirir e utilizar o produto, você declara estar de acordo com estes termos e com a política de privacidade vigente.',
     ],
   },
   '/suporte': {
     title: 'Suporte',
     paragraphs: [
-      'Se voce precisar de ajuda com acesso, pagamento ou duvidas sobre o produto, entre em contato pelos canais abaixo.',
-      'Email: cavernadealexandria@gmail.com',
-      'WhatsApp: (11)986955476',
-      'Nosso atendimento responde por ordem de chegada em horario comercial.',
+      'Se você precisar de ajuda com acesso, pagamento ou dúvidas sobre o produto, entre em contato pelos canais abaixo.',
+      'E-mail: cavernadealexandria@gmail.com',
+      'WhatsApp: (11) 98695-5476',
+      'Nosso atendimento responde por ordem de chegada, em horário comercial.',
     ],
   },
 } as const;
@@ -55,9 +55,9 @@ const maleNames = [
   'Mateus',
   'Thiago',
   'Gabriel',
-  'Andre',
+  'André',
   'Renato',
-  'Vinicius',
+  'Vinícius',
   'Gustavo',
 ];
 
@@ -94,9 +94,9 @@ function SocialProofPopup() {
   }, []);
 
   const messages = [
-    '23 pessoas adquiriram este metodo nas ultimas horas',
-    '10 pessoas comprando AGORA',
-    `${buyerName} comprou o Código Anti-Rejeção agora!`,
+    '23 pessoas adquiriram este método nas últimas horas.',
+    '10 pessoas estão comprando agora.',
+    `${buyerName} comprou o Código Anti-Rejeição agora!`,
   ];
 
   return (
@@ -113,15 +113,15 @@ function Footer() {
   return (
     <footer className="site-footer">
       <nav className="footer-nav">
-        <a href="/privacidade" className="footer-link">Politica de Privacidade</a>
+        <a href="/privacidade" className="footer-link">Política de Privacidade</a>
         <span className="footer-sep">|</span>
-        <a href="/termos" className="footer-link">Termos de Servico</a>
+        <a href="/termos" className="footer-link">Termos de Serviço</a>
         <span className="footer-sep">|</span>
         <a href="/suporte" className="footer-link">Suporte</a>
       </nav>
       <div className="footer-disclaimer">
-        Este produto e destinado a homens adultos que desejam melhorar sua presenca digital.
-        Os resultados variam individualmente. O sistema nao garante resultados especificos em relacionamentos.
+        Este produto é destinado a homens adultos que desejam melhorar sua presença digital.
+        Os resultados variam individualmente. O sistema não garante resultados específicos em relacionamentos.
       </div>
     </footer>
   );
@@ -153,12 +153,12 @@ function LegalPage({
 
       <main className="legal-wrapper">
         <section className="legal-card">
-          <p className="legal-kicker">Informacoes Legais</p>
+          <p className="legal-kicker">Informações Legais</p>
           <h1 className="legal-title">{title}</h1>
           {paragraphs.map((paragraph) => (
             <p key={paragraph} className="legal-paragraph">{paragraph}</p>
           ))}
-          <a href="/" className="legal-back">Voltar para a pagina principal</a>
+          <a href="/" className="legal-back">Voltar para a página principal</a>
         </section>
       </main>
 
@@ -201,7 +201,7 @@ function LandingPage() {
                 <a
                   className="jump-cta-button"
                   href="#storytelling"
-                  aria-label="Ver o sistema completo e ir para a secao de storytelling"
+                  aria-label="Ver o sistema completo e ir para a seção de storytelling"
                 >
                   <span className="jump-cta-label">VER O SISTEMA COMPLETO</span>
                   <span className="jump-cta-arrow" aria-hidden="true">{'>'}</span>
@@ -214,15 +214,15 @@ function LandingPage() {
                 <a
                   className="offer-jump-card"
                   href="#offerstack"
-                  aria-label="Aplicar o sistema completo e ir para a secao da oferta"
+                  aria-label="Aplicar o sistema completo e ir para a seção da oferta"
                 >
                   <div className="offer-jump-icon" aria-hidden="true">
                     <img src="/Insta.png" alt="" className="offer-jump-icon-img" />
                   </div>
 
                   <div className="offer-jump-copy">
-                    <p className="offer-jump-eyebrow">PERCEPCAO GERA ATRACAO.</p>
-                    <p className="offer-jump-title">ESTRATEGIA GERA RESULTADOS.</p>
+                    <p className="offer-jump-eyebrow">PERCEPÇÃO GERA ATRAÇÃO.</p>
+                    <p className="offer-jump-title">ESTRATÉGIA GERA RESULTADOS.</p>
                   </div>
 
                   <span className="offer-jump-button">
@@ -239,8 +239,8 @@ function LandingPage() {
           <div className="cta-alert">
             <span className="alert-icon">!</span>
             <div className="alert-text-block">
-              <p className="alert-title">O JOGO MUDA QUANDO VOCE COMECA A SER PERCEBIDO DIFERENTE.</p>
-              <p className="alert-sub">Voce esta a um passo de parar de aceitar qualquer match so por carencia e comecar a se envolver com mulheres que hoje parecem inalcanaveis.</p>
+              <p className="alert-title">O JOGO MUDA QUANDO VOCÊ COMEÇA A SER PERCEBIDO DE FORMA DIFERENTE.</p>
+              <p className="alert-sub">Você está a um passo de parar de aceitar qualquer match só por carência e começar a se envolver com mulheres que hoje parecem inalcançáveis.</p>
             </div>
           </div>
 
