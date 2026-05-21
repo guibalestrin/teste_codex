@@ -68,7 +68,11 @@ function SocialProofPopup() {
   useEffect(() => {
     const intervalId = window.setInterval(() => {
       setMessageIndex((currentIndex) => {
-        const nextIndex = (currentIndex + 1) % 3;
+        let nextIndex = currentIndex;
+
+        while (nextIndex === currentIndex) {
+          nextIndex = Math.floor(Math.random() * 3);
+        }
 
         if (nextIndex === 2) {
           setBuyerName((currentName) => {
@@ -84,7 +88,7 @@ function SocialProofPopup() {
 
         return nextIndex;
       });
-    }, 3800);
+    }, 10000);
 
     return () => window.clearInterval(intervalId);
   }, []);
@@ -98,12 +102,9 @@ function SocialProofPopup() {
   return (
     <aside className="social-proof-popup" aria-live="polite" aria-atomic="true">
       <span className="social-proof-dot" aria-hidden="true" />
-      <div className="social-proof-copy">
-        <p className="social-proof-label">Prova social</p>
-        <p key={messages[messageIndex]} className="social-proof-message">
-          {messages[messageIndex]}
-        </p>
-      </div>
+      <p key={messages[messageIndex]} className="social-proof-message">
+        {messages[messageIndex]}
+      </p>
     </aside>
   );
 }
