@@ -282,6 +282,16 @@ button {
     0 18px 42px rgba(0, 0, 0, 0.42),
     inset 0 1px 0 rgba(255, 227, 170, 0.08);
   backdrop-filter: blur(12px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(18px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.social-proof-popup.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .social-proof-dot {
