@@ -253,7 +253,7 @@ function LandingPage() {
               rel="noreferrer"
             >
               <div className="offer-cta-sheen" />
-              <span className="btn-lock">LOCK</span>
+              <span className="btn-lock"></span>
               <div className="btn-content">
                 <p className="btn-text">QUERO ACESSAR O CÓDIGO ANTI-REJEIÇÃO AGORA</p>
                 <p className="btn-sub">ACESSO IMEDIATO | 100% ONLINE | GARANTIA DE 7 DIAS</p>
